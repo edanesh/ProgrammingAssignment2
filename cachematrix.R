@@ -8,7 +8,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
-        if (nrow(x) != ncol(x)) {print('Error: argument must be a square materix!')}
+        if (nrow(x) != ncol(x)) {message('Error: argument must be a square matrix!')}
         set <- function(y) {
                 x <<- y
                 i <<- NULL
@@ -35,6 +35,6 @@ cacheSolve <- function(x, ...) {
                 i <- solve(data, ...)
                 x$setinverse(i)
         }
-        else {print('Error: matrix is not invertible!')}
+        else {message('Error: matrix is not invertible!')}
         i
 }
